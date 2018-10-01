@@ -8,19 +8,24 @@ import android.app.TaskStackBuilder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
 
 import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
 
 public class AlarmReceiver extends BroadcastReceiver{
     private static final String CHANNEL_ID = "com.singhajit.notificationDemo.channelId";
+    long[]v = {500,1000};
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Intent notificationIntent = new Intent(context, NotificationActivity.class);
+        Intent notificationIntent = new Intent(context, LocationActivity.class);
+
+        Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-        stackBuilder.addParentStack(NotificationActivity.class);
+        stackBuilder.addParentStack(LocationActivity.class);
         stackBuilder.addNextIntent(notificationIntent);
 
         PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -31,6 +36,8 @@ public class AlarmReceiver extends BroadcastReceiver{
                 .setContentText("New Notification From Demo App..")
                 .setTicker("New Message Alert!")
                 .setSmallIcon(R.mipmap.ic_launcher)
+                .setVibrate(v)
+                .setSound(uri)
                 .setContentIntent(pendingIntent).build();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

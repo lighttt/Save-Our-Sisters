@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <TextView
+        android:layout_weight="10"
+        android:paddingTop="5dp"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I feel unsafe here!"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="24sp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:id="@id/layout_map"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="475dp"
+        android:layout_weight="80">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/notifmap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_weight="10"
+        android:id="@+id/redirect"
+        android:layout_below="@+id/layout_map"
+        android:text="Redirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingBottom="12dp"/>
+
+</LinearLayout>
