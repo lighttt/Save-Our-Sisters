@@ -13,8 +13,12 @@ import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karumi.dexter.Dexter;
@@ -29,19 +33,62 @@ import java.security.Key;
 import java.util.Calendar;
 import java.util.List;
 
+import pl.droidsonroids.gif.GifImageView;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    int key;
-    int keyEvent;
-    int count;
+    int count = 0;
+    int key,keyEvent;
+
+    private static final String TAG = "MainActivity";
+    private GifImageView mCurrent;
+    private ImageView mPast;
+    private TextView mCurrentEmergency,mPastEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "onCreate: Started MainActivity");
         //storage permission
         requestStoragePermission();
+
+        mCurrent = (GifImageView)findViewById(R.id.current);
+        mCurrentEmergency = (TextView)findViewById(R.id.currentEmergency);
+        mPast = (ImageView)findViewById(R.id.pastevents);
+        mPastEvent = (TextView)findViewById(R.id.pastevents1);
+
+        mCurrentEmergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent current = new Intent(MainActivity.this,LocationActivity.class);
+                startActivity(current);
+            }
+        });
+
+        mCurrent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent current1 = new Intent(MainActivity.this,LocationActivity.class);
+                startActivity(current1);
+            }
+        });
+
+        mPast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent past = new Intent(MainActivity.this,PastActivity.class);
+                startActivity(past);
+            }
+        });
+        mPastEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent past1 = new Intent(MainActivity.this,PastActivity.class);
+                startActivity(past1);
+            }
+        });
     }
 
      /*
@@ -121,6 +168,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     *  ========================= Used for volume key button ===================================
+     */
 
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
@@ -130,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
             Intent notificationIntent = new Intent(this, AlarmReceiver.class);
             PendingIntent broadcast = PendingIntent.getBroadcast(this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
+            //get the time from the calendar and show notification
             Calendar cal = Calendar.getInstance();
             cal.add(Calendar.SECOND, 5);
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);

@@ -43,7 +43,7 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
-    private static final String TAG = "LocationActiv";
+    private static final String TAG = "LocationActivity";
 
     private Context mContext = LocationActivity.this;
 
@@ -62,7 +62,9 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        Log.d(TAG, "onCreate: Starting.");
+        Log.d(TAG, "onCreate: Starting LocationActivity");
+
+        mRedirect = (Button)findViewById(R.id.redirect);
 
         //maps
         buildGoogleApiClient();
@@ -77,7 +79,13 @@ public class LocationActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-      /*
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Intent intent = new Intent(LocationActivity.this,MainActivity.class);
+    }
+
+    /*
     --------------------------------------------Google Maps----------------------------------
      */
 

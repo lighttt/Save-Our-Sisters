@@ -5,23 +5,80 @@
     android:layout_height="match_parent"
     android:weightSum="100">
 
-    <TextView
-        android:layout_weight="10"
-        android:paddingTop="5dp"
-        android:id="@+id/title"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I feel unsafe here!"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="24sp"
+        android:layout_weight="10">
+    <TextView
+        android:paddingTop="10dp"
+        android:id="@+id/title"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Emergency Information"
+        android:gravity="center"
+        android:paddingBottom="10dp"/>
+    <TextView
+        android:layout_below="@+id/title"
+        android:id="@+id/Id"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Id: "
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/Id"
+        android:id="@+id/Idname"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="65482"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_below="@+id/Id"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_below="@+id/Id"
+        android:layout_toRightOf="@+id/Name"
+        android:id="@+id/tvName"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abcde Xyz"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/Name"
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Location: "
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
         android:layout_gravity="center"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@id/layout_map"
         android:layout_below="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="475dp"
-        android:layout_weight="80">
+        android:layout_weight="70">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -31,19 +88,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="7dp"
-        android:layout_marginBottom="7dp"
         android:layout_marginRight="7dp"
         android:layout_marginLeft="7dp"/>
     </LinearLayout>
 
     <Button
+        android:backgroundTint="@color/colorPrimary"
         android:layout_weight="10"
         android:id="@+id/redirect"
         android:layout_below="@+id/layout_map"
-        android:text="Redirect"
+        android:text="Send Request"
+        android:textColor="@color/colorWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="center"
         android:paddingBottom="12dp"/>
 
 </LinearLayout>

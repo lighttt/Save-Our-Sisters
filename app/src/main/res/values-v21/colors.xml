@@ -6,11 +6,14 @@
     <color name="colorGrey">#bfbfbf</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorPink">#f093ce</color>
+    <color name="colorBack">#1c1b1b</color>
+
     <color name="primaryColor">#42a5f5</color>
     <color name="secondaryLightColor">#9575cd</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#080808</color>
-    <color name="background">#d1c4e9</color>
+    <color name="background">#1c1b1b</color>
     <color name="buttoncolors">#AB47BC</color>
     <color name="background2">#E8EAF6</color>
     <color name="background3">#76FF03</color>

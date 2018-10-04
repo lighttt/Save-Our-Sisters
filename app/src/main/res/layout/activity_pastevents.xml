@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:paddingTop="10dp"
+        android:id="@+id/events"
+        android:text="Past Events"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/events">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/Pid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Vicitim's id: "
+                android:textColor="#000" />
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:id="@+id/Piddisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:text="101"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Pid"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Name:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/Pnamedisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Piddisplay"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/Name"
+                android:text="Abcde Xyz"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/cardview1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/Pid2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Vitcim's id:"
+                android:textColor="#000" />
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:id="@+id/Piddisplay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:text="102"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/Name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Pid2"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Name:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/Pnamedisplay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Piddisplay2"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/Name2"
+                android:text="Xyz Abcde"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardview2"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/Pid3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Vitcim's id:"
+                android:textColor="#000" />
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:id="@+id/Piddisplay3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:text="102"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/Name3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Pid3"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Name:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/Pnamedisplay3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Piddisplay3"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/Name3"
+                android:text="Xyz Abcde"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardview3"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/Pid4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Vitcim's id:"
+                android:textColor="#000" />
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:id="@+id/Piddisplay4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:text="102"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/Name4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Pid4"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Name:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/Pnamedisplay4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Piddisplay4"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/Name4"
+                android:text="Xyz Abcde"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardview4"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/Pid5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Vitcim's id:"
+                android:textColor="#000" />
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:id="@+id/Piddisplay5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:text="102"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/Name5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Pid5"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Name:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/Pnamedisplay5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Piddisplay5"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/Name5"
+                android:text="Xyz Abcde"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
